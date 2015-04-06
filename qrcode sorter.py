@@ -11,7 +11,6 @@ def get_code(file):
 	try:
 		raw_code = subprocess.check_output(["C:\\Program Files (x86)\\ZBar\\bin\\zbarimg", "-q", \
 		file])
-		#print(raw_code)
 		raw_code = raw_code.rstrip()
 		raw_code = raw_code.decode(encoding)
 		code = raw_code.split(':',1)[1]
