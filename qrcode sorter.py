@@ -18,12 +18,8 @@ def get_code(file):
 	except:
 		return("unreadable_code")
 
-def make_folder(folder_name):
- folder = os.path.join(os.getcwd(), folder_name)
-
- os.makedirs(folder, exist_ok=True)
-
-
+# edit this to specify which kinds of image files
+# you want it to look at
 image_files=glob.glob('*.JPG') + glob.glob('*.png')
 print(image_files)
 
@@ -33,8 +29,10 @@ for file in image_files:
  # get the code
  code = get_code(file)
  # make the folder
+ # you could edit here and make it rename the file
+ # instead of a new folder, or make it name the folders
+ # in some other way
  folder = os.path.join(os.getcwd(), code)
- #print(folder)
  os.makedirs(folder, exist_ok=True)
  #move the file
  os.rename(file_path, folder + "\\" + file)
