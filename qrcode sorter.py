@@ -21,14 +21,9 @@ def get_code(file):
 
 def make_folder(folder_name):
  folder = os.path.join(os.getcwd(), folder_name)
- #print(folder)
+
  os.makedirs(folder, exist_ok=True)
 
-
-#test =  "G:\\Dropbox\\Research Organized\\Projects\\03.misc small other\\3.3 barcodes\\20150320_0474.JPG"
-#print(get_code(test))
-
-#print(os.listdir())
 
 image_files=glob.glob('*.JPG') + glob.glob('*.png')
 print(image_files)
